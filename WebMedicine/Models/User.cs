@@ -31,10 +31,6 @@ namespace WebMedicine.Models
         [MaxLength(50, ErrorMessage ="Превышена максимальная длина записи")]
         public string Position { get; set; }
 
-        //Отдел
-        [Display(Name ="Отдел")]
-        public int? DepartmentId { get; set; }
-
         //Статус
         [Required]
         [Display(Name ="Статус")]
