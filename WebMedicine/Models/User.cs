@@ -5,38 +5,42 @@ namespace WebMedicine.Models
 {
     public class User
     {
-        //ID
+        // ID 
         public int Id { get; set; }
-        
-        //Фамилия Имя Отчество
+
+        // Фамилия Имя Отчество
         [Required]
         [Display(Name = "Фамилия Имя Отчество")]
         [MaxLength(50, ErrorMessage = "Превышена максимальная длина записи")]
         public string Name { get; set; }
-        
-        //Логин
+
+        // Логин
         [Required]
-        [Display(Name ="Логин")]
-        [MaxLength(50, ErrorMessage ="Превышена максимальная длина записи")]
+        [Display(Name = "Логин")]
+        [MaxLength(50, ErrorMessage = "Превышена максимальная длина записи")]
         public string Login { get; set; }
 
-        //Пароль
+        // Пароль
         [Required]
-        [Display(Name ="Пароль")]
-        [MaxLength(50, ErrorMessage ="Превышена максимальная длина записи")]
+        [Display(Name = "Пароль")]
+        [MaxLength(50, ErrorMessage = "Превышена максимальная длина записи")]
         public string Password { get; set; }
 
-        //Дожность
-        [Display(Name ="Должность")]
-        [MaxLength(50, ErrorMessage ="Превышена максимальная длина записи")]
+        // Должность
+        [Display(Name = "Должность")]
+        [MaxLength(50, ErrorMessage = "Превышена максимальная длина записи")]
         public string Position { get; set; }
 
-        //Статус
+        // Отдел
+        [Display(Name = "Отдел")]
+        public int? DepartmentId { get; set; }
+        public Department Department { get; set; }
+
+        // Статус
         [Required]
-        [Display(Name ="Статус")]
+        [Display(Name = "Статус")]
         public int RoleId { get; set; }
         public Role Role { get; set; }
-
 
     }
 }
