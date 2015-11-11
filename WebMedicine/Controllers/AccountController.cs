@@ -25,7 +25,7 @@ namespace WebMedicine.Controllers
                 if (ValidateUser(model.UserName, model.Password))
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
-                    if(Url.IsLocalUrl(returnUrl))
+                    if (Url.IsLocalUrl(returnUrl))
                     {
                         return Redirect(returnUrl);
                     }
@@ -36,14 +36,13 @@ namespace WebMedicine.Controllers
                 }
 
                 else
-
                 {
                     ModelState.AddModelError("", "Неправильный пароль или логин");
                 }
             }
 
-                return View(model);
-            }
+            return View(model);
+        }
 
         public ActionResult LogOff()
         {
@@ -51,7 +50,7 @@ namespace WebMedicine.Controllers
             return RedirectToAction("Login", "Account");
         }
 
-        private bool ValidateUser (string login, string password)
+        private bool ValidateUser(string login, string password)
         {
             bool isValid = false;
 
@@ -74,6 +73,5 @@ namespace WebMedicine.Controllers
             }
             return isValid;
         }
-        }
     }
-        
+}
